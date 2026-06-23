@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shane Duncan, software engineer focused on backend and distributed systems.">
   <title>Shane Duncan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Cropped_Image.ico">
+  <link rel="icon" type="image/x-icon" href="/Cropped_Image.ico">
   <style>
     :root {
       --bg: #0b0b0f;
@@ -15,11 +19,19 @@
       --text-muted: #8a8a96;
       --accent: #c4915e;
       --accent-dim: rgba(196, 145, 94, 0.12);
-      --mono: 'Space Mono', monospace;
-      --sans: 'Inter', -apple-system, sans-serif;
+      --mono: "Space Mono", monospace;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background: var(--bg);
+    }
 
     body {
       background: var(--bg);
@@ -36,14 +48,15 @@
       padding: 80px 24px 120px;
     }
 
-    /* ── Header ── */
-    header { margin-bottom: 64px; }
+    header {
+      margin-bottom: 64px;
+    }
 
     h1 {
       font-family: var(--mono);
       font-size: 28px;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: 0;
       margin-bottom: 12px;
     }
 
@@ -62,63 +75,69 @@
     }
 
     .links a {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--accent);
-      text-decoration: none;
-      padding: 5px 12px;
       border: 1px solid var(--border);
       border-radius: 4px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0;
+      padding: 5px 12px;
+      text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
     }
 
-    .links a:hover {
-      border-color: var(--accent);
+    .links a:hover,
+    .links a:focus-visible {
       background: var(--accent-dim);
+      border-color: var(--accent);
     }
 
-    /* ── Sections ── */
-    section { margin-bottom: 56px; }
+    section {
+      margin-bottom: 56px;
+    }
 
     .section-label {
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
       font-family: var(--mono);
       font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
+      letter-spacing: 0;
       margin-bottom: 24px;
       padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
     }
 
-    /* ── Projects ── */
     .project {
-      padding: 20px 0;
       border-bottom: 1px solid var(--border);
+      padding: 20px 0;
     }
 
-    .project:last-child { border-bottom: none; }
+    .project:last-child {
+      border-bottom: none;
+    }
 
     .project-header {
-      display: flex;
       align-items: baseline;
-      justify-content: space-between;
+      display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      justify-content: space-between;
       margin-bottom: 8px;
     }
 
     .project-name {
+      color: var(--text);
       font-family: var(--mono);
       font-size: 16px;
       font-weight: 700;
-      color: var(--text);
+      letter-spacing: 0;
     }
 
     .project-tech {
+      color: var(--text-muted);
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--text-muted);
+      letter-spacing: 0;
     }
 
     .project-desc {
@@ -134,177 +153,197 @@
     }
 
     .project-links a {
+      color: var(--accent);
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--accent);
+      letter-spacing: 0;
       text-decoration: none;
     }
 
-    .project-links a:hover { text-decoration: underline; }
-
-    /* ── Experience ── */
-    .role {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
+    .project-links a:hover,
+    .project-links a:focus-visible {
+      text-decoration: underline;
     }
 
-    .role:last-child { border-bottom: none; }
+    .role {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+
+    .role:last-child {
+      border-bottom: none;
+    }
 
     .role-header {
-      display: flex;
-      justify-content: space-between;
       align-items: baseline;
+      display: flex;
       flex-wrap: wrap;
       gap: 4px;
+      justify-content: space-between;
       margin-bottom: 4px;
     }
 
     .role-title {
-      font-weight: 600;
       font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0;
     }
 
     .role-date {
+      color: var(--text-muted);
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--text-muted);
+      letter-spacing: 0;
     }
 
     .role-company {
-      font-size: 13px;
       color: var(--text-muted);
+      font-size: 13px;
       margin-bottom: 6px;
     }
 
     .role-desc {
-      font-size: 13px;
       color: var(--text-muted);
+      font-size: 13px;
       line-height: 1.55;
     }
 
-    /* ── Education ── */
-    .edu-entry { margin-bottom: 16px; }
-    .edu-entry:last-child { margin-bottom: 0; }
+    .edu-entry {
+      margin-bottom: 16px;
+    }
+
+    .edu-entry:last-child {
+      margin-bottom: 0;
+    }
 
     .edu-school {
-      font-weight: 600;
       font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0;
     }
 
     .edu-detail {
-      font-size: 13px;
       color: var(--text-muted);
+      font-size: 13px;
     }
 
-    /* ── Responsive ── */
     @media (max-width: 520px) {
-      .container { padding: 48px 20px 80px; }
-      h1 { font-size: 22px; }
-      .project-header { flex-direction: column; gap: 2px; }
-      .role-header { flex-direction: column; }
+      .container {
+        padding: 48px 20px 80px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .project-header,
+      .role-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-
+  <main class="container">
     <header>
       <h1>Shane Duncan</h1>
       <p class="tagline">
-        Software engineer focused on backend and distributed systems. Building on Java, Go, and Python — currently working on microservice architectures on AWS at scale. Pursuing an M.S. in Computer Science (ML) at Georgia Tech.
+        Software engineer focused on backend and distributed systems. Building on Java, Go, and Python -
+        currently working on microservice architectures on AWS at scale. Pursuing an M.S. in Computer Science
+        (ML) at Georgia Tech.
       </p>
-      <div class="links">
+      <nav class="links" aria-label="Contact links">
         <a href="mailto:dshane1902@gmail.com">email</a>
-        <a href="https://github.com/dshane1903" target="_blank">github</a>
-        <a href="https://linkedin.com/in/shaneduncan" target="_blank">linkedin</a>
-      </div>
+        <a href="https://github.com/dshane1903" target="_blank" rel="noreferrer">github</a>
+        <a href="https://linkedin.com/in/shaneduncan" target="_blank" rel="noreferrer">linkedin</a>
+      </nav>
     </header>
 
     <section>
       <div class="section-label">Projects</div>
 
-      <div class="project">
+      <article class="project">
         <div class="project-header">
-          <span class="project-name">Raft Key-Value Store</span>
-          <span class="project-tech">Go · gRPC · bbolt · Prometheus</span>
+          <h2 class="project-name">Raft Key-Value Store</h2>
+          <span class="project-tech">Go | gRPC | bbolt | Prometheus</span>
         </div>
         <p class="project-desc">
           Distributed key-value store implementing the Raft consensus protocol. Supports leader election, log replication, dynamic membership changes, log compaction via snapshotting, linearizable reads, and persistent state. Includes a partition test harness for fault injection.
         </p>
         <div class="project-links">
-          <a href="https://github.com/dshane1903/raft-kv-store" target="_blank">code →</a>
-          <a href="https://github.com/dshane1903/raft-kv-store#demo" target="_blank">demo →</a>
+          <a href="https://github.com/dshane1903/raft-kv-store" target="_blank" rel="noreferrer">code -&gt;</a>
+          <a href="https://github.com/dshane1903/raft-kv-store#demo" target="_blank" rel="noreferrer">demo -&gt;</a>
         </div>
-      </div>
+      </article>
 
-      <div class="project">
+      <article class="project">
         <div class="project-header">
-          <span class="project-name">OMSLens</span>
-          <span class="project-tech">Python · FastAPI · React · PostgreSQL</span>
+          <h2 class="project-name">OMSLens</h2>
+          <span class="project-tech">Python | FastAPI | React | PostgreSQL</span>
         </div>
         <p class="project-desc">
           Deployed RAG platform with hybrid dense-sparse retrieval and reciprocal rank fusion. Features a retrieval evaluation harness (precision@k, recall@k, MRR) and full observability via Prometheus and Grafana dashboards. Runs on AWS ECS.
         </p>
         <div class="project-links">
-          <a href="https://omscslens.com" target="_blank">live →</a>
-          <a href="https://github.com/dshane1903/omslens" target="_blank">code →</a>
+          <a href="https://omscslens.com" target="_blank" rel="noreferrer">live -&gt;</a>
+          <a href="https://github.com/dshane1903/omslens" target="_blank" rel="noreferrer">code -&gt;</a>
         </div>
-      </div>
+      </article>
 
-      <div class="project">
+      <article class="project">
         <div class="project-header">
-          <span class="project-name">vLLM / llm-compressor</span>
-          <span class="project-tech">Python · Open Source Contribution</span>
+          <h2 class="project-name">vLLM / llm-compressor</h2>
+          <span class="project-tech">Python | Open Source Contribution</span>
         </div>
         <p class="project-desc">
           Merged PR modernizing type hints to Python 3.10+ across the llm-compressor codebase. Open architectural PR removing the IMatrixGatherer abstraction across llm-compressor and compressed-tensors repositories.
         </p>
         <div class="project-links">
-          <a href="https://github.com/vllm-project/llm-compressor/pulls?q=author%3Adshane1903" target="_blank">pull requests →</a>
+          <a href="https://github.com/vllm-project/llm-compressor/pulls?q=author%3Adshane1903" target="_blank" rel="noreferrer">pull requests -&gt;</a>
         </div>
-      </div>
+      </article>
     </section>
 
     <section>
       <div class="section-label">Experience</div>
 
-      <div class="role">
+      <article class="role">
         <div class="role-header">
-          <span class="role-title">Associate Software Engineer</span>
-          <span class="role-date">Mar 2025 – Present</span>
+          <h2 class="role-title">Associate Software Engineer</h2>
+          <span class="role-date">Mar 2025 - Present</span>
         </div>
-        <div class="role-company">Infosys · contracted to New York Life</div>
+        <div class="role-company">Infosys | contracted to New York Life</div>
         <p class="role-desc">
           Backend engineer on an enterprise AI platform. Own the Java Spring Boot aggregator service (BFF) between Angular frontend and Python FastAPI microservices on AWS EKS. Built JWT/LDAP authentication, SSE streaming, and Agent Registry endpoints backed by DynamoDB.
         </p>
-      </div>
+      </article>
 
-      <div class="role">
+      <article class="role">
         <div class="role-header">
-          <span class="role-title">Data Engineer Intern</span>
-          <span class="role-date">Jul – Aug 2024</span>
+          <h2 class="role-title">Data Engineer Intern</h2>
+          <span class="role-date">Jul - Aug 2024</span>
         </div>
         <div class="role-company">Open Road Integrated Media</div>
         <p class="role-desc">
           Built Airflow DAGs and data pipelines using PySpark, Apache Parquet, and Hive metastore for the Data Fusion team.
         </p>
-      </div>
+      </article>
     </section>
 
     <section>
       <div class="section-label">Education</div>
 
-      <div class="edu-entry">
-        <div class="edu-school">Georgia Institute of Technology</div>
-        <div class="edu-detail">M.S. Computer Science · Machine Learning Specialization · Expected 2028</div>
-      </div>
+      <article class="edu-entry">
+        <h2 class="edu-school">Georgia Institute of Technology</h2>
+        <div class="edu-detail">M.S. Computer Science | Machine Learning Specialization | Expected 2028</div>
+      </article>
 
-      <div class="edu-entry">
-        <div class="edu-school">University of Pennsylvania</div>
-        <div class="edu-detail">B.S.E. Systems Science & Engineering · 2023</div>
-      </div>
+      <article class="edu-entry">
+        <h2 class="edu-school">University of Pennsylvania</h2>
+        <div class="edu-detail">B.S.E. Systems Science &amp; Engineering | 2023</div>
+      </article>
     </section>
-
-  </div>
+  </main>
 </body>
 </html>
